@@ -1,0 +1,7 @@
+venv/
+__pychache__/
+*.pyc
+.env
+.DS_Store
+data/processed/
+*.db
