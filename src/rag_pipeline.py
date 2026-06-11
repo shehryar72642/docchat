@@ -16,9 +16,13 @@ The LLM's answer is "grounded" in our documents rather than relying
 purely on what it memorized during training.
 """
 
+import os
 import ollama
 
-from query_vectorstore import query_vectorstore
+OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+client = ollama.Client(host=OLLAMA_HOST)
+
+from .query_vectorstore import query_vectorstore
 
 
 # The LLM model we pulled via `ollama pull phi3:mini`
@@ -98,7 +102,7 @@ def generate_answer(prompt: str) -> str:
 
     Returns just the text content of the model's reply.
     """
-    response = ollama.chat(
+    response = client.chat(
         model=LLM_MODEL,
         messages=[
             {"role": "user", "content": prompt}

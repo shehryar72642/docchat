@@ -20,7 +20,11 @@ Why we need this step:
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
-from ingest import load_pdfs, split_documents, RAW_DATA_DIR
+from .ingest import load_pdfs, split_documents, RAW_DATA_DIR
+
+import os
+os.environ["HF_HUB_OFFLINE"] = "1"
+os.environ["TRANSFORMERS_OFFLINE"] = "1"
 
 
 # Model name on Hugging Face Hub. The first time this runs, it will

@@ -17,7 +17,7 @@ to generate a final answer.
 
 import chromadb
 
-from build_vectorstore import CHROMA_DB_DIR, COLLECTION_NAME, get_embedding_function
+from .build_vectorstore import CHROMA_DB_DIR, COLLECTION_NAME, get_embedding_function
 
 
 def query_vectorstore(question: str, n_results: int = 3):

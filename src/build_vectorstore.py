@@ -27,8 +27,8 @@ Run this script whenever:
 import chromadb
 from chromadb.utils import embedding_functions
 
-from ingest import load_pdfs, split_documents, RAW_DATA_DIR
-from embed import EMBEDDING_MODEL_NAME
+from .ingest import load_pdfs, split_documents, RAW_DATA_DIR
+from .embed import EMBEDDING_MODEL_NAME
 
 
 # Where Chroma will store its database files on disk.

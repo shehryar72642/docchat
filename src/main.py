@@ -24,7 +24,7 @@ How to run this:
 from fastapi import FastAPI
 from pydantic import BaseModel
 
-from rag_pipeline import answer_question
+from .rag_pipeline import answer_question
 
 
 # Create the FastAPI application instance.
