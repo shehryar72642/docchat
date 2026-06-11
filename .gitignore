@@ -5,3 +5,4 @@ __pychache__/
 .DS_Store
 data/processed/
 *.db
+.idea/
