@@ -24,7 +24,8 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # ---- Configuration ----
-RAW_DATA_DIR = "data/raw"
+import os
+RAW_DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "raw")
 
 # CHUNK_SIZE: max number of characters per chunk.
 # 1000 chars is roughly 150-250 words - small enough for embedding models,

@@ -34,7 +34,8 @@ from embed import EMBEDDING_MODEL_NAME
 # Where Chroma will store its database files on disk.
 # This folder will contain SQLite files + index data - it's how the
 # "database" persists between script runs.
-CHROMA_DB_DIR = "chroma_db"
+import os
+CHROMA_DB_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "chroma_db")
 
 # Name of the "collection" - think of this like a table name in SQL.
 # A single Chroma database can hold multiple collections.
