@@ -1,0 +1,15 @@
+# docker-compose.yml
+# -------------------
+# Simplifies running the DocChat container.
+# Instead of typing the full `docker run` command with flags,
+# just run: docker compose up
+
+services:
+  docchat:
+    build: .                # build from the Dockerfile in this directory
+    ports:
+      - "8000:8000"          # map host port 8000 -> container port 8000
+    environment:
+      # host.docker.internal lets the container reach Ollama
+      # running on the host Mac
+      - OLLAMA_HOST=http://host.docker.internal:11434
